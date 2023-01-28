@@ -1,0 +1,112 @@
+.input-fields{
+    border:solid 1px gray;
+    width:100%;
+    display:block;
+    padding: 0.385rem 0.75rem;
+    margin:8px 0 16px 0px;
+    box-sizing:border-box;
+    background-color:rgb(255 255 255);
+    line-height:1.5;
+    background-clip:padding-box;
+    border:rgb(47 50 54) 1px solid;
+    border-radius:0.375rem;
+    font-size:1rem;
+  }
+    
+.input-fields:focus{
+    outline:3px solid rgb(97 173 249);
+}
+    
+.mylabel{
+    font-size:14px;
+    font-weight:600;
+    font-family:verdana, sans-serif;
+}
+    
+  
+.ncontainer{
+    padding:8px;
+}
+  
+.ncontainer h2 {
+text-align:center;
+}
+  
+  
+.incontain{
+    background-color:aliceblue;
+    padding:23px;
+    border:1px solid aliceblue;
+    z-index:1;
+    left:50%;
+    right:40%;
+    margin:auto;
+    width:35%;
+    margin-top:25px;
+}
+  
+
+
+.submitbtn{
+  background-color:rgba(199, 128, 250, 0.78);
+  font-size:22px;
+  font-weight:bold;
+  text-transform:uppercase;
+  border:0px;
+  cursor:pointer;
+  border-radius:35px;
+  padding:6px;
+  width:100%;
+  color:white;
+  margin-top:25px;
+  margin-bottom:15px;
+  
+}
+  
+
+.submitbtn:hover{
+  color:black;
+  background-color:rgb(110,32,167);
+}
+  
+.nor-btn{
+  background-color:rgba(199, 128, 250, 0.78);
+  font-size:14px;
+  font-weight:700;
+
+  border:0px;
+  cursor:pointer;
+  border-radius:15px;
+  padding:6px;
+  width:100%;
+  margin-top:25px;
+  margin-bottom:15px;
+  text-decoration:none
+}
+
+
+  
+.helpid03w{
+  left:50%;
+  right:40%;
+  margin:auto;
+  width:45%;
+  text-align:center;
+
+}
+.helpid03w a{
+  padding:12px;
+  margin:16px;
+  display:inline-block;
+  text-align:center;
+  text-decoration:none;
+}
+
+.helpid03w a:hover{
+    font-weight:bold;
+    color:black;
+}
+
+
+  
+

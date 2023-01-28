@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+{% include 'header.html' %}
+
+
+
+
+<h2 class="text-center p-1 mb-2">Listed Channel's</h2>
+<div class="conatiner pb-4 mb-3">
+
+  <!--Container Start Here For Channel-->
+<div class="d-flex container  p-2 justify-content-center">
+  <div class="row row-cols-1 row-cols-md-3 g-4 d-flex">
+    {% for channels in channels %}
+    <div class="col">
+      <div class="card h-100">
+        <img src="{{ channels.logo.url}}""  style="width:120px; height:120px ;align-self: center;" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{channels.channel_name}}</h5>
+          <p class="card-text pb-0 text-center">{{channels.description | truncatewords:22}}</p>
+          <p class="badge bg-primary text-wrap btn-sm text-center "><spann>{{channels.category}}</span></p>
+          <ul class="list-inline text-center">
+            <li class="list-inline-item fw-bold"><span>Total Views:</span> {{channels.watch_time}}</li>
+            <li class="list-inline-item fw-bold"><span>Subscribers:</span> {{channels.total_subscriber}}</li>
+          
+          </ul>
+        </div>
+        <div class="card-footer">
+          <a href="https://wa.me/918602850930" class="btn btn-primary">Buy</a>          
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+</div>
+  <!--Conatiner End Here For Channel-->
+</div>
+
+
+<div class=" container-fluid p-3 mb-2 mt-2 bg-warning" style="background-color:rgb(84 104 255);">
+    <div class="text-center mt-2 mb-2 fw-bold" style="font-size:36px;">Contact us</div>
+  
+      <div class="row justify-content-center p-4 ">
+
+        <div class="col-md-6 shadow-sm  p-3 m-1 mb-5 bg-body-tertiary ">
+          <form method="post">
+            {% csrf_token %}
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            {{contact_form.name}}
+        
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            {{contact_form.email}}
+        
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Phone</label>
+            {{contact_form.contact}}
+        
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Your Query</label>
+            {{contact_form.query}}
+        
+          </div>
+        
+          <button class="btn btn-lg btn-primary">Submit</button>
+      
+        </form>
+          
+        </div>
+
+
+      </div>
+
+    
+</div>
+  
+
+
+
+
+
+
+
+
+{% comment %} 
+{% if messages %}
+<div class="alert alert-warning alert-dismissible fade show rounded" role="alert">
+
+  <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.success %} class="{{ message.success}}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+  </ul>
+
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %} {% endcomment %}
+
+
+
+{% endblock content %}
+
+
+
+
+
+

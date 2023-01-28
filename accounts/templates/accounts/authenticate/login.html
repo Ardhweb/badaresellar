@@ -1,0 +1,58 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+
+
+{% if messages %}
+<div class="container-fluid w-25 incontain" style="z-index:1;background-color:">
+     {% for message in messages %}
+      <div class="alert alert-danger" style="z-index:1;" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <h4 class="alert-heading">Oops!</h4>
+        <p{% if message.error %} class= "{{ message.error }}"{% endif %}>
+          {{ message }}</p>
+       
+      </div>
+     {% endfor %}
+    
+</div>
+{% endif %}
+
+
+<div class="ncontainer">
+<h2>You can Login Now</h2>
+<div class="incontain shadow ">
+<form action="{% url 'login' %}" method="post" enctype="multipart/form-data">
+
+
+
+<label class="mylabel"  for="uname"><b>Your Email</b></label>
+</br>
+{{ laform.username }}
+
+<label class="mylabel" for="upass"><b>Your Password</b></label>
+</br>
+{{laform.password}}
+{% csrf_token %}
+<button type='submit' class="submitbtn " >Submit</button>
+
+</form>
+</div>
+</div>
+
+<div class="helpid03w">
+<a href="{% url 'signup' %}">Don't Have Account</a>
+<a href="{% url 'password_reset' %}">Forgat Password</a>
+</div>
+
+
+<div class="ncontainer mt-1  p-2" >
+  <a href="{% url 'index' %}" class="nor-btn" width="10%">Back Home</a>
+</div>
+
+
+
+
+
+
+{% endblock %}

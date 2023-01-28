@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% if request.user.is_authenticated %}
+<h2>
+   <span>{{user.username}}</span>
+    , Welcome to BadaResellar </h2>
+<h5>You've Successfully Log-in at BadaResellar</h5>
+ {% endif %} 
+{% endblock content %}

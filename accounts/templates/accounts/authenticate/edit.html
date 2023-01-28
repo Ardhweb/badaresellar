@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class=" mt-5  container text-center jumbotron bg-blue shadow-sm mb-5 bg-primary rounded ">
+    <h2>Edit your account</h2>
+    <p>You can edit your account using the following form:</p>
+    
+   </div>
+
+   <div class="shadow-lg mb-5 bg-light rounded container"> 
+
+        <form class=" p-3 m-2" style="align-self:center;align-items:center" method="post" enctype="multipart/form-data" >
+            {% comment %} {{ user_form.as_p }} {% endcomment %}
+            <label for="id_for_email" value="Email address:">Email address:</label>
+            <div class="d-flex mb-1">
+                {{user_form.email}} 
+            </div>
+            <label for="id_for_conact_no" value="Conact_no">Contact:</label>
+            <div class="d-flex flex-row mb-3">
+                {{user_form.country_code}}
+                {{user_form.contact_no}} 
+            </div>
+        
+            {{ profile_form.as_p }}
+            {% csrf_token %}
+            <p><input type="submit" value="Save changes" class="btn btn-primary shadow p-3 mb-5 bg-primary rounded"></p>
+        </form>
+
+   </div>
+
+
+
+
+
+{% endblock content %}
+
+
+
+
+
+

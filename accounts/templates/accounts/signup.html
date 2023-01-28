@@ -1,0 +1,102 @@
+{% extends 'accounts/base.html' %}
+{% block title %}{{Signup}}{% endblock title %}
+
+{% block content %}
+
+
+{% if messages %}
+<div class="container-fluid w-25 incontain" style="z-index:1;">
+     {% for message in messages %}
+      <div class="alert alert-danger" style="z-index:1;" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <h4 class="alert-heading message">Oops!</h4>
+        <p{% if message.error %} class= "{{ message.error }}"{% endif %}>
+          {{ message }}</p>
+       
+      </div>
+     {% endfor %}
+    
+</div>
+{% endif %}
+
+<div class="container">
+    <h1 style="text-align:center">Create Account</h1>
+    <div class="incontain p-2">
+    <h2 style="text-align:center">Signup Form</h2>
+    
+    <form  method="post">
+        {% csrf_token %}
+        {% comment %} {{user_form.non_field_errors}}
+        {% for field in user_form %}
+            {{field.label_tag}} {{field}} {{field.errors}}
+        {% endfor %}
+         {% endcomment %}
+    <!--First Field-->
+
+    <div class="row">
+    <label class="mylabel">Email</label></br>
+    <!--input class="input-fields"-->
+    {{user_form.email}}
+    </div>
+    
+    <!--Second Field-->
+    <div class="row">
+    
+    <label class="mylabel">Full Name</label>
+    <!--input class="input-fields" -->
+    {{user_form.full_name}}
+    </div>
+    
+    <!--Third Field-->
+    <div class="">
+    <label class="mylabel">Contact No.</label></br>
+    <!--input class="input-fields" placeholder="+91" 
+    style="width:15%; display:inline;"-->
+    {{user_form.country_code}}
+
+    {{user_form.contact_no}}
+    </div>
+    <!--End's All Rows Field-->
+    
+    <div class="row ">
+    <label class="mylabel">Password</label>
+    <!--input class="input-fields" -->
+    {{user_form.password}}
+    <div class="alert alert-warning errorlist" role="alert">
+        {% if user_form.errors %}
+        {{user_form.password.errors.as_text}}
+        {% endif %}
+    </div>
+    </div>
+    
+    <div class="row">
+    <label class="mylabel">Repeat Password</label>
+    <!--input class="input-fields" -->
+    {{user_form.password2}}
+    </div>
+    
+    <button type=submit class="submitbtn">Submit</button>
+    
+    </form>
+   
+    </div>
+
+    <div class="helpid03w">
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'password_reset' %}">Forgat Password</a>
+        </div>
+
+    <div class="ncontainer mt-1  p-2" >
+        <a href="{% url 'index' %}" class="nor-btn" width="10%">Back Home</a>
+    </div>
+
+
+    </div>
+    
+    
+
+
+{% endblock content %}
+
+
+

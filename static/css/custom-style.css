@@ -1,0 +1,164 @@
+.logobada{
+  background-color:none;
+  width:65px;
+  height:60px;
+}
+.navheader{
+    top:0;
+    padding:0px 0px 18px 0px;
+    background-color:rgb(248,249,250);
+    margin-bottom:16px;
+    width:100%;
+    box-shadow: 0 0.5rem 1rem rgb(255, 255, 255);
+    
+}
+.navbar-toggl{
+  padding: none;
+  font-size: var(--bs-navbar-toggler-font-size);
+  line-height: 1;
+  color: var(--bs-navbar-color);
+  background-color: transparent;
+  border: solid 0px white;
+  border-radius: var(--bs-navbar-toggler-border-radius);
+  transition: var(--bs-navbar-toggler-transition);
+    
+  }
+    
+.nav-item{
+    font-size:14px;
+    color:black;
+    text-decoration:none;
+    font-weight:bold;
+    padding:10px;
+    margin:5px;
+}
+.nav-item:hover{
+  font-weight:bolder;
+
+}
+    
+.footer{
+    background-color:rgb(35, 34, 34);
+      bottom: 0;
+      width: 100%;
+      height:auto;
+      margin-top:90%;   
+}
+.flexbox {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 30px;
+      text-align: center;
+  }
+    
+.flex-content {
+      padding: 10px;
+      flex:20%;
+      padding-bottom:0px;
+      margin-bottom:15px;
+      flex-direction: column;
+    }
+    
+    
+    
+    
+.boot-items{
+    display:inline-block
+    
+    
+    
+    }
+    
+    
+.boot-items a{
+    font-size:14px;
+    font-weight:400;
+    text-decoration:none;
+    padding:12px;
+    margin:16px;
+    color:rgb(128,128,128);
+    text-align:center;
+    display:inline;
+    padding-bottom:14px;
+    
+    
+    
+    }
+  .copyright{
+    font-size:12px;
+    color:rgb(128,128,128);
+    text-align:center;
+    display:inline;
+    padding:12px;
+    margin:16px;
+    }
+    
+.wrapp-credit{
+    float:right;
+    color:rgb(128,128,128);
+    font-size:9px;
+    text-decoration:none;
+    
+    }
+
+
+  
+.row{
+  display:flex;
+  margin:2px 2px 2px 2px;
+  /* background-color:blue; */
+  flex-wrap: wrap;
+  }
+  
+.col{
+    flex-grow: 1;
+     flex-shrink: 0;
+     flex-basis: 0;
+     background-color:gray;
+     text-align:center;
+     padding:5px;
+     margin:3px;
+}
+  
+
+.mt-1{
+  margin-top:0.99rem;
+}
+
+.mb-1{
+  margin-bottom:0.99rem;
+}
+  
+.p-2{
+  padding:2.0rem;
+  
+}
+
+.logov{
+  margin:2px;
+}
+.brandname{
+  text-align:center;
+  font-weight:bold;
+  line-height:3;
+
+}
+.logoimg{
+  float:left
+}
+
+
+/*forms*/
+
+
+.alert-heading{
+  font-size:16px;
+  color:red;
+  font-weight: bolder;
+}
+
+.errorlist{
+  color:red;
+  font-weight:bold;
+  font-family:sans-serif;
+}
