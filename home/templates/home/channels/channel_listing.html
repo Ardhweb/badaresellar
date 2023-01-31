@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container-fluid mt-4 ">
+  <div class="">
+
+    <div class="row d-flex">
+      {% for ch in ch_obj %}
+         <div class="col-md-auto col ">
+          <div class="z-3 position-absolute  ">    <p class="position-relative clearfix ml-3 badge bg-warning fs-6 float-sm-start mony-label">{{ch.monetization_status}}</p></div>
+          <div class="card rounded-0  card-center-mobi" style="width: 18rem;">
+            <img src="{{ch.thumbnail_imge.url}}" class="card-img-top " alt="...">
+           
+            <div class="card-body">
+              <h5 class="card-text fw-bold">{{ch.channel_name}}|
+                Subs{{ch.current_subscriber}}+ |{{ch.listing_id|upper}}|
+                {{ch.price}}</h5>
+               <a href="{{ch.get_absolute_url}}" class="btn btn-primary">View More</a>
+            </div>
+          </div>
+         </div>
+      {% endfor %}
+  
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+{% include "home/channels/pagination.html" with page_obj=ch_obj %}
+{% endblock content %}
+
+
+
+
+
+
+

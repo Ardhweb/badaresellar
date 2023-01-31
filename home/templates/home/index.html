@@ -9,8 +9,9 @@
 
 
 
-<h2 class="text-center p-1 mb-2">Listed Channel's</h2>
-<div class="conatiner pb-4 mb-3">
+<h2 class="text-center p-1 mb-2">Recent Listed Channel's</h2>
+{% include 'home/channels/list.html' %}
+{% comment %} <div class="conatiner pb-4 mb-3">
 
   <!--Container Start Here For Channel-->
 <div class="d-flex container  p-2 justify-content-center">
@@ -18,7 +19,8 @@
     {% for channels in channels %}
     <div class="col">
       <div class="card h-100">
-        <img src="{{ channels.logo.url}}""  style="width:120px; height:120px ;align-self: center;" class="card-img-top" alt="...">
+        {% comment %} <img src="{{ channels.logo.url}}""  style="width:120px; height:120px ;align-self: center;" class="card-img-top" alt="..."> 
+        <img src="{{ channels.logo.url}}"" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title text-center">{{channels.channel_name}}</h5>
           <p class="card-text pb-0 text-center">{{channels.description | truncatewords:22}}</p>
@@ -38,7 +40,170 @@
 
 </div>
   <!--Conatiner End Here For Channel-->
+</div> {% endcomment %}
+
+<div class="container-fluid  mb-3  " style="padding-bottom: 2.25em;background-color:rgba(199, 128, 250, 0.78);">
+<div class="text-center fw-bold fs-3 mt-3 pt-3 mb-auto">How This Works</div>
+    <!--Container Start Here For Channel-->
+    <div class="row m-4 mt-5 text-center">
+      <div class="col-sm-4 mb-3 mb-sm-0">
+        <div class="card ">
+          <div class="card-body">
+            <h5 class="card-title fs-2 fw-bold text-uppercase mb-3">First</h5>
+            <h6 class=" text-uppercase fs-4 ">select Channel</h6>
+            <p class="card-text lh-lg ">With supporting text below as a natural lead-in to additional content.</p>
+          
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 mb-3 mb-sm-0">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title fs-2  fw-bold  text-uppercase mb-3">Second</h5>
+            <h6 class=" text-uppercase fs-4 ">Make Payment</h6>
+            <p class="card-text lh-lg">With supporting text below as a natural lead-in to additional content.</p>
+           
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 mb-3 mb-sm-0">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title fs-2  fw-bold  text-uppercase mb-3">Final</h5>
+            <h6 class=" text-uppercase fs-4 ">Get Channel</h6>
+            <p class="card-text text-wrap lh-lg">With supporting text below as a natural lead-in to additional content.</p>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Conatiner End Here For Channel-->
 </div>
+
+<div class="container-fluid p-4 mt-3 mb-3">
+  <div class="text-center fw-bold fs-3 pt-3 mt-3 mb-auto">Happy Customer's</div>
+  <div class="m-4">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="https://cdn.pixabay.com/photo/2015/04/04/21/11/logo-707109__340.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="https://cdn.pixabay.com/photo/2016/04/19/06/57/logo-1338108__340.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://cdn.pixabay.com/photo/2016/04/19/06/57/logo-1338108__340.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+{% comment %} </div>
+
+<div class="container-fluid  mb-5  " style="padding-bottom: 2.25em;background-color:rgba(199, 128, 250, 0.78);">
+  <div class="text-center fw-bold fs-3 mt-3 pt-3 mb-auto">Our Services</div>
+      <!--Container Start Here For Channel-->
+      <div class="row m-4 mt-5 text-center">
+        <div class="col-sm-4 mb-3 mb-sm-0">
+          <div class="card p-2  text-white rounded-0" style="background-color:#C84B31;">
+            <div class="card-body">
+              <h5 class="card-title fs-3 fw-bold text-uppercase mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+                <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
+                <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
+                <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
+              </svg></h5>
+              <h6 class=" text-uppercase fs-4 ">First Service</h6>
+              <p class="card-text text-center lh-sm ">Our Team of Experts is Ready to Manage and Grow Your Channel at an Unstoppable Pace. We Provide Channel Management Services From Scratch to Hatch. For Those Who Want A Better Position on Youtube.</p>
+             
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mb-3 mb-sm-0">
+          <div class="card p-2  text-white rounded-0" style="background-color: #6D67E4;;">
+            <div class="card-body">
+              <h5 class="card-title fs-3 fw-bold text-uppercase mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+                <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
+                <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
+                <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
+              </svg></h5>
+              <h6 class=" text-uppercase fs-4 ">First Service</h6>
+              <p class="card-text text-center lh-sm ">Our Team of Experts is Ready to Manage and Grow Your Channel at an Unstoppable Pace. We Provide Channel Management Services From Scratch to Hatch. For Those Who Want A Better Position on Youtube.</p>
+             
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mb-3 mb-sm-0">
+          <div class="card p-2 rounded-0 text-white" style="background-color:#E94560;">
+            <div class="card-body mb-2">
+              <h5 class="card-title fs-3  fw-bold  text-uppercase mb-3"></h5>
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-megaphone" viewBox="0 0 16 16">
+                <path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-.214c-2.162-1.241-4.49-1.843-6.912-2.083l.405 2.712A1 1 0 0 1 5.51 15.1h-.548a1 1 0 0 1-.916-.599l-1.85-3.49a68.14 68.14 0 0 0-.202-.003A2.014 2.014 0 0 1 0 9V7a2.02 2.02 0 0 1 1.992-2.013 74.663 74.663 0 0 0 2.483-.075c3.043-.154 6.148-.849 8.525-2.199V2.5zm1 0v11a.5.5 0 0 0 1 0v-11a.5.5 0 0 0-1 0zm-1 1.35c-2.344 1.205-5.209 1.842-8 2.033v4.233c.18.01.359.022.537.036 2.568.189 5.093.744 7.463 1.993V3.85zm-9 6.215v-4.13a95.09 95.09 0 0 1-1.992.052A1.02 1.02 0 0 0 1 7v2c0 .55.448 1.002 1.006 1.009A60.49 60.49 0 0 1 4 10.065zm-.657.975 1.609 3.037.01.024h.548l-.002-.014-.443-2.966a68.019 68.019 0 0 0-1.722-.082z"/>
+              </svg>
+              <h6 class=" text-uppercase fs-4 ">Third Service</h6>
+              <p class="card-text text-center text-wrap lh-sm">Channel Promotion and Youtube Ads are Sometimes Necessary To Increase Brand Awareness, Explore New Audience and Increase Sales and Revenue With Best ROI. Our Team Has Promoted Many Youtube Channel With Great ROI</p>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Conatiner End Here For Channel-->
+  </div> {% endcomment %}
+<div class="container">
+  <div class="text-center fw-bold fs-2 pt-3 mt-3 mb-3 pt-2 ">Our Services</div>
+  <div class=" row d-flex flex-row  justify-content-center">
+    <div style="background-color:#ff5c35;" class=" text-white border text-center p-2 m-2 flex-fill justify-content-center col-md-auto">
+      <span class="mt-2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+        <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+      </svg></span>
+      <div class="card-body mt-2">
+        <h4 class="card-title fs-3 ">Management</h4>
+        <p class="text-break text-wrap fs-5 " style="margin-top:0.25em;">Our team of specialists is ready to direct and promote your channel at a rapid tempo.
+        </br> We provide channel management facilities from the beginning to conclusion.
+        </br> For those requiring an improved place on YouTube.
+      </div>
+    </div>
+    <div style="background-color:#166edb;" class=" text-white border text-center p-2 m-2 flex-fill col-md-auto">
+      <span class="mt-3"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+        <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
+        <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
+        <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
+      </svg></span>
+      <div class="card-body mt-2">
+        <h4 class="card-title  fs-3 ">Montiezation</h4>
+        <p class=" text-break text-wrap fs-5">Creating and monetizing a Youtube channel is essential for creator rights, partner program benefits, and revenue.
+        </br> BadaReseller is the trusted platform to help you get your channel up and running without any trouble.
+      </div>
+    </div>
+    <div style="background-color:#db1f16;" class=" text-white border text-center p-2 m-2 flex-fill col-md-auto">
+      <span class="mt-2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-megaphone" viewBox="0 0 16 16">
+        <path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-.214c-2.162-1.241-4.49-1.843-6.912-2.083l.405 2.712A1 1 0 0 1 5.51 15.1h-.548a1 1 0 0 1-.916-.599l-1.85-3.49a68.14 68.14 0 0 0-.202-.003A2.014 2.014 0 0 1 0 9V7a2.02 2.02 0 0 1 1.992-2.013 74.663 74.663 0 0 0 2.483-.075c3.043-.154 6.148-.849 8.525-2.199V2.5zm1 0v11a.5.5 0 0 0 1 0v-11a.5.5 0 0 0-1 0zm-1 1.35c-2.344 1.205-5.209 1.842-8 2.033v4.233c.18.01.359.022.537.036 2.568.189 5.093.744 7.463 1.993V3.85zm-9 6.215v-4.13a95.09 95.09 0 0 1-1.992.052A1.02 1.02 0 0 0 1 7v2c0 .55.448 1.002 1.006 1.009A60.49 60.49 0 0 1 4 10.065zm-.657.975 1.609 3.037.01.024h.548l-.002-.014-.443-2.966a68.019 68.019 0 0 0-1.722-.082z"/>
+      </svg></span>
+      <div class="card-body mt-2">
+        <h4 class="card-title  fs-3 ">Permotion & Ads</h4>
+        <p class=" text-break text-wrap fs-5">Channel Promotion and Youtube Ads can sometimes be necessary in order to increase brand awareness, explore new audience, and boost sales and revenue with the best ROI. </br>Our team has successfully promoted many youtube channels with great ROI.</p>
+      </div>
+    </div>
+
+
+
+</div>
+</div></div> 
+
+      
+</div>
+
+
 
 
 <div class=" container-fluid p-3 mb-2 mt-2 bg-warning" style="background-color:rgb(84 104 255);">

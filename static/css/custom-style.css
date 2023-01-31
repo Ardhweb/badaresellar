@@ -37,6 +37,10 @@
 
 }
     
+#footer{
+  bottom:0;
+  }
+
 .footer{
     background-color:rgb(35, 34, 34);
       bottom: 0;
@@ -44,6 +48,36 @@
       height:auto;
       margin-top:90%;   
 }
+
+.credit{
+  font-size:12px;
+}
+.credit:hover{
+  font-weight:bold;
+}
+  
+.ft-lc{
+  color:black;
+}
+.ft-lc:hover{
+  font-weight:bold;
+}	
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0; 
+  box-shadow: 0 ;
+}
+
+/* .header-img{
+  /*background-image:url("../img/back-head-img.jpg");*/
+  /*background:url("/img/paper.png");*/
+  /* background-image:url({% static 'img\tim.jpg' %}); */
+  /* background-size:cover;
+  height:427px;
+  margin:0 0 3.5rem 0;
+  opacity:1; */
+/* }  */
+  
 .flexbox {
       display: flex;
       flex-wrap: wrap;
@@ -57,19 +91,9 @@
       padding-bottom:0px;
       margin-bottom:15px;
       flex-direction: column;
-    }
-    
-    
-    
-    
+}     
 .boot-items{
-    display:inline-block
-    
-    
-    
-    }
-    
-    
+    display:inline-block}  
 .boot-items a{
     font-size:14px;
     font-weight:400;
@@ -80,9 +104,6 @@
     text-align:center;
     display:inline;
     padding-bottom:14px;
-    
-    
-    
     }
   .copyright{
     font-size:12px;
@@ -128,6 +149,15 @@
 .mb-1{
   margin-bottom:0.99rem;
 }
+
+.ml-3{
+  margin-left: 3.33rem;
+}
+
+.mr-3{
+  margin-left: 3.33rem;
+}
+  
   
 .p-2{
   padding:2.0rem;
@@ -162,3 +192,79 @@
   font-weight:bold;
   font-family:sans-serif;
 }
+
+.btn-unique{
+  text-transform: uppercase;
+  font-size: 16px;
+
+}
+
+
+  
+.voximg
+{
+  width:120px;
+  height:120px;
+}
+    
+
+ 
+
+.block-button{
+  text-transform:uppercase;
+  line-height:6;
+  color:white;
+  font-size:inherit;
+  font-weight:bold;
+  border-radius:50px;
+  background-color:rgba(199, 128, 250, 0.78);
+  padding:16px 32px;
+
+  letter-spacing:2px;
+  text-decoration:none;
+  text-align:center;
+  font-family:inherit;
+  display:inline-block;
+  }
+
+  .btn-outline-block:hover{
+    border:solid 2px black;
+  }
+
+  .custom-mt-5{
+    margin-top:5rem;
+  }
+
+    /*list*/
+  
+.ml-3{
+  margin-left: 3.33rem;
+}
+
+.mr-3{
+  margin-left: 3.33rem;
+}
+.mony-label{
+  margin-left:3.33rem;
+}
+
+.sell_tc{
+  font-size:18px;
+  line-height:2;
+  letter-spacing:2px;
+  text-align:justify;
+
+}
+
+.sell_tc::selection{
+  background-color:rgba(199, 128, 250, 0.78);
+  color:white;
+}
+
+.voximg
+{
+  width:120px;
+  height:120px;
+}
+ 
+   

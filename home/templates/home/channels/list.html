@@ -1,0 +1,32 @@
+
+<div class="container-fluid pb-4 mb-3">
+
+    <!--Container Start Here For Channel-->
+
+    <div class="row d-flex justify-content-center">
+      {% for channels in channels %}
+         <div class="col-md-auto clearfix">
+          <div class="z-3 position-absolute  ">    <p class="position-relative clearfix ml-3 badge bg-warning fs-6 float-sm-start mony-label">{{channels.monetization_status}}</p></div>
+          <div class="card card-center-mobi" style="width: 18rem;">
+            <img src="{{channels.thumbnail_imge.url}}" class="card-img-top img-fluid" alt="...">
+           
+            <div class="card-body">
+              <p class="card-text fw-bold">{{channels.channel_name}}|Subscribers{{channels.current_subscriber}}</p>
+               <a href="{{channels.get_absolute_url}}" class="btn btn-primary">View More</a>
+            </div>
+          </div>
+         </div>
+      {% endfor %}
+  
+    </div>
+    <!--Conatiner End Here For Channel-->
+</div>
+
+<div class="container-fluid mb-5">
+  <div class="d-flex justify-content-center text-center">
+    <a href="{% url 'channel-list' %}" class="btn btn-danger btn-lg">View All Channel's</a>
+
+  </div>
+
+</div>
+  

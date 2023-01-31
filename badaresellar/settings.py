@@ -140,9 +140,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",    
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",    
+# ]
+STATIC_ROOT  = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 
@@ -184,12 +185,21 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com' 
 EMAIL_PORT = 587
+<<<<<<< HEAD
 EMAIL_HOST_USER = 'email@gmail.com'  
 EMAIL_HOST_PASSWORD = 'App Pawssord Code @ step Verification One'
 
 DEFAULT_FROM_EMAIL = '<noreply@badaresellar.com>'
 
 RECIPIENT_ADDRESS = 'email@gmail.com'
+=======
+EMAIL_HOST_USER = 'sun.projectsdev@gmail.com'  
+EMAIL_HOST_PASSWORD = 'zonyansjwvtyxicl'
+
+DEFAULT_FROM_EMAIL = '<noreply@badaresellar.com>'
+
+RECIPIENT_ADDRESS = 'hiwhystudio.dev@gmail.com'
+>>>>>>> 43977b4 (Second Update)
 
 
 

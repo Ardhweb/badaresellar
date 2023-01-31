@@ -9,7 +9,7 @@ import os
 
 @receiver(pre_delete, sender=AddChannel)
 def delete_channel(sender,instance,**kwargs):
-    instance.logo.delete(False)
+    instance.thumbnail_imge.delete(False)
     # channel = AddChannel.objects.get(id=id)
     # if len(channel.logo) > 0:
     #     os.remove(channel.logo.path)
@@ -19,7 +19,7 @@ def delete_channel(sender,instance,**kwargs):
 
 @receiver(post_save, sender=AddChannel)
 def update_channel(sender,instance,**kwargs):
-    location = instance.logo
+    location = instance.thumbnail_imge
     print(f'FileName:{location}')
     # c_location = instance.logo
     # c_location.delete(False)

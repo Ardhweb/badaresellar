@@ -16,8 +16,8 @@
           <div>
             {% if request.user.is_authenticated %}
                <p> Hi {{request.user.email }},</p>
-            {% else %}
-               <p>Please Login First</p>
+            {% comment %} {% else %}
+               <p>Please Login First</p> {% endcomment %}
                
             {% endif %}
           </div>
@@ -30,9 +30,12 @@
               <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#">Buy Channel</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sell Channel</a>
+            </li>
+            {% comment %} <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown
               </a>
@@ -44,7 +47,7 @@
                 </li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul>
-            </li>
+            </li> {% endcomment %}
             {% if request.user.is_superuser %}
             <li class="nav-item">
               <a class="nav-link" href="">Admin Panel</a>
