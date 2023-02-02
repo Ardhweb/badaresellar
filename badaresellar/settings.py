@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 from django.core.mail import send_mail  
 import os
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,6 +44,10 @@ INSTALLED_APPS = [
     'accounts',
     "home",
     'django_cleanup.apps.CleanupConfig',
+    'sorl.thumbnail',
+    'ckeditor',
+    'ckeditor_uploader',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware"
 ]
 
 ROOT_URLCONF = 'badaresellar.urls'
@@ -140,14 +147,16 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static",    
-# ]
-STATIC_ROOT  = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    BASE_DIR / "static",    
+]
+# STATIC_ROOT  = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
+CKEDITOR_UPLOAD_PATH = "uploads/blog/"
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -157,7 +166,57 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
 
+CKEDITOR_FILENAME_GENERATOR = 'blog.utils.get_filename'
 
+
+CKEDITOR_CONFIGS = {
+    'awesome_ckeditor': {
+        'toolbar': 'Custom',
+              'toolbar_Custom': [
+            {'name': 'document', 'items': ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates']},
+            {'name': 'clipboard', 'items': ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
+            {'name': 'editing', 'items': ['Find', 'Replace', '-', 'SelectAll']},
+            {'name': 'forms',
+             'items': ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton',
+                       'HiddenField']},
+            '/',
+            {'name': 'basicstyles',
+             'items': ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat']},
+            {'name': 'paragraph',
+             'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-',
+                       'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl',
+                       'Language']},
+            {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
+            {'name': 'insert',
+             'items': ['Image', 'Youtube','Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe']},
+            '/',
+            {'name': 'styles', 'items': ['Styles', 'Format', 'Font', 'FontSize']},
+            {'name': 'colors', 'items': ['TextColor', 'BGColor']},
+            {'name': 'tools', 'items': ['Maximize', 'ShowBlocks']},
+            {'name': 'about', 'items': ['CodeSnippet']},
+            {'name': 'about', 'items': ['About']},
+            '/',  # put this to force next toolbar on new line
+            {'name': 'yourcustomtools', 'items': [
+                # put the name of your editor.ui.addButton here
+                'Preview',
+                'Maximize',
+
+            ]},
+        ],
+        #   'toolbar_Custom': [
+        #     ['Bold', 'Italic', 'Underline' ,'image', 'image2', ],
+        #     ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+        #     ['Link', 'Unlink'],
+        #     ['RemoveFormat', 'Source'],
+        #     ['colordialog',]
+        # ]
+    },
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': 300,
+    },
+}
 
 import os
 from django.contrib.messages import constants as messages
@@ -185,21 +244,14 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com' 
 EMAIL_PORT = 587
-<<<<<<< HEAD
+
 EMAIL_HOST_USER = 'email@gmail.com'  
 EMAIL_HOST_PASSWORD = 'App Pawssord Code @ step Verification One'
 
 DEFAULT_FROM_EMAIL = '<noreply@badaresellar.com>'
 
 RECIPIENT_ADDRESS = 'email@gmail.com'
-=======
-EMAIL_HOST_USER = 'sun.projectsdev@gmail.com'  
-EMAIL_HOST_PASSWORD = 'zonyansjwvtyxicl'
 
-DEFAULT_FROM_EMAIL = '<noreply@badaresellar.com>'
-
-RECIPIENT_ADDRESS = 'hiwhystudio.dev@gmail.com'
->>>>>>> 43977b4 (Second Update)
 
 
 
@@ -207,3 +259,7 @@ RECIPIENT_ADDRESS = 'hiwhystudio.dev@gmail.com'
 #PASSWORD_RESET_TIMEOUT = 1*60 #(This Number IS Second)
 PASSWORD_RESET_TIMEOUT_DAYS = 1440 #(1 Day)
 PASSWORD_RESET_EXPIRE_AFTER_LAST_ACTIVITY = True
+
+
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)

@@ -52,3 +52,19 @@ def channel_details(request, id=None):
 
 def sell_channel(request):
     return render(request,'home/channels/sell.html')
+
+
+def about_us(request):
+    return render(request, 'home/aboutus.html')
+
+
+def permotion_service(request):
+    return render(request, 'home/channels/services/permotion.html')
+
+
+def management_service(request):
+    return render(request, 'home/channels/services/management.html')
+
+
+def monetization_service(request):
+    return render(request, 'home/channels/services/monetizate.html')

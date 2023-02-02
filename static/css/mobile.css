@@ -1,43 +1,8 @@
 
-
-@media screen and (max-width: 480px) {
-    .incontain {
-      width: 77%;
-    }
-    .input-fields{
-      padding: 0.190rem 0.50rem;
-      line-height:0.50;
-    }
-    .mobihead{
-      flex-direction:row;
-      justify-content:left;
-    }
-    .logov{
-      width:40px;
-      height:auto;
-      justify-content:flex-start;
-    }
-    .helpid03w{
-      font-size:16px;
-    }
-    .brandname{
-      text-align:center;
-      font-weight:bold;
-      line-height:3;
-      margin-top: -35px;
-      font-size:20px;
-    }
-    .logoimg{
-      float:left
-    }
-}
-
-
+    
  
     /* Responsive layout - makes a one column-layout instead of a two-column layout */
 @media only screen and (max-width: 768px){
-  .flex-content {flex: 100%;}
-  .flexbox{flex-direction: column;}
   /*list*/
   .card-center-mobi{
     left:25px; 
@@ -49,43 +14,7 @@
   
 
  
-      
-@media screen and (max-width: 325px){
-  .block-button{
-    border-radius:12px;
-    padding:12px 16px;
-    margin-top:6%;
-    align-self:center;
-    line-height:1;
-    font-size:11px;
-    font-weight:bolder;
-    width:50%;
-    margin-left:23%;
-    padding:12px 14px;
-  }
-  .main-text{
-    text-align:center;
-  }
-  /*list*/
-
-.card-center-mobi{
-  left:10px; 
-  right:10px;
-  margin-top:5%;
-}
-.ml-3{
-  margin-left: 0;
-}
-
-.mr-3{
-  margin-left: 0;
-}
-.mony-label{
-  margin:1.23rem;
-}
-  
-  
-}
+   
 
 
 /*For Mobile*/
@@ -121,4 +50,3 @@
   }
 
 }
-

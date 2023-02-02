@@ -2,7 +2,7 @@
 <nav class="navbar bg-white  pt-3 pb-3 shadow-lg ">
     <div class="container-fluid">
       <a class="#navbar-brand" href="#">
-        <img class="logobada" src="{% static 'img/logo/logobada.jpg' %}" alt=""/>
+        <img class="logobada" src="{% static 'img/logo/logobada.jpg' %}"  alt=""/>
       </a>
       <button class="navbar-toggl" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
@@ -30,24 +30,30 @@
               <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Buy Channel</a>
+              <a class="nav-link" href="{% url 'channel-list' %}">Buy Channel</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sell Channel</a>
+              <a class="nav-link" href="{% url 'sell-channel' %}">Sell Channel</a>
             </li>
-            {% comment %} <li class="nav-item dropdown">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about_us' %}">About us</a>
+            </li>
+            <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
+                Services
               </a>
               <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="{% url 'permotion-service' %}">Channel Permotion</a></li>
+                <li><a class="dropdown-item" href="{% url 'management-service' %}">Channel Management</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="{% url 'monetizate-service' %}">Channel Monetization</a></li>
               </ul>
-            </li> {% endcomment %}
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'blog-page' %}">Blog</a>
+            </li> 
             {% if request.user.is_superuser %}
             <li class="nav-item">
               <a class="nav-link" href="">Admin Panel</a>

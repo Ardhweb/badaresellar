@@ -10,37 +10,11 @@
 
 
 <h2 class="text-center p-1 mb-2">Recent Listed Channel's</h2>
-{% include 'home/channels/list.html' %}
-{% comment %} <div class="conatiner pb-4 mb-3">
 
   <!--Container Start Here For Channel-->
-<div class="d-flex container  p-2 justify-content-center">
-  <div class="row row-cols-1 row-cols-md-3 g-4 d-flex">
-    {% for channels in channels %}
-    <div class="col">
-      <div class="card h-100">
-        {% comment %} <img src="{{ channels.logo.url}}""  style="width:120px; height:120px ;align-self: center;" class="card-img-top" alt="..."> 
-        <img src="{{ channels.logo.url}}"" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title text-center">{{channels.channel_name}}</h5>
-          <p class="card-text pb-0 text-center">{{channels.description | truncatewords:22}}</p>
-          <p class="badge bg-primary text-wrap btn-sm text-center "><spann>{{channels.category}}</span></p>
-          <ul class="list-inline text-center">
-            <li class="list-inline-item fw-bold"><span>Total Views:</span> {{channels.watch_time}}</li>
-            <li class="list-inline-item fw-bold"><span>Subscribers:</span> {{channels.total_subscriber}}</li>
-          
-          </ul>
-        </div>
-        <div class="card-footer">
-          <a href="https://wa.me/918602850930" class="btn btn-primary">Buy</a>          
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-
-</div>
+  {% include 'home/channels/list.html' %}
   <!--Conatiner End Here For Channel-->
-</div> {% endcomment %}
+
 
 <div class="container-fluid  mb-3  " style="padding-bottom: 2.25em;background-color:rgba(199, 128, 250, 0.78);">
 <div class="text-center fw-bold fs-3 mt-3 pt-3 mb-auto">How This Works</div>
@@ -202,7 +176,6 @@
 
       
 </div>
-
 
 
 

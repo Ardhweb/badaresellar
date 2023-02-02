@@ -62,7 +62,7 @@ def login_user(request):
                     #return render(request,'authenticate/login_done.html', {'user':user})
                     context ={'laform':laform}
                     # try:
-                    #     return redirect('https://wa.me/918602850930') # or return redirect('/') 
+                    #     return redirect('https://wa.me/7722882599?') # or return redirect('/') 
                     # except:
                     #     return HttpResponseRedirect('')
                     return redirect('index')

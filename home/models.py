@@ -5,8 +5,10 @@ from django.db import models
 from django.urls import reverse
 # Create your models here.
 
+from django.utils.html import mark_safe
 
-
+from sorl.thumbnail import get_thumbnail
+from django.utils.html import format_html
    
    
 
@@ -105,3 +107,14 @@ class Reviews(models.Model):
     
     def __str__(self):
         return self.name
+    
+    @property
+    def thumbnail_preview(self):
+        if self.image:
+            _image = get_thumbnail(self.image,
+                                   '300x300',
+                                   upscale=False,
+                                   crop=False,
+                                   quality=100)
+            return format_html('<img src="{}" width="{}" height="{}">'.format(_image.url, _image.width, _image.height))
+        return ""

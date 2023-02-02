@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+{{post_obj.title}}
+{{post_obj.body |safe}}
+
+
+<img src="{{post_obj.body.image.url}}">
+{% endblock content %}
+
+
+
+

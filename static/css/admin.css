@@ -1,0 +1,81 @@
+#header{
+  background-color: #5f6ef3;
+  padding-bottom: 3.25em;
+}
+#branding #site-name a{
+  font-weight: 800;
+  color: aliceblue;
+ 
+}
+#branding #site-name a:first-letter:hover{
+  font-weight: 800;
+  color: rgb(255, 60, 35);
+  font-size: 35px;
+ 
+}
+
+div.breadcrumbs {
+    background: #aa4fff;
+    color:#10284e;
+
+  }
+
+.module caption{
+  background-color: #aa4fff;
+  font-size: 14px;
+  
+}
+
+.module table th{
+ font-size: 18px;
+  
+}
+
+.module table tr th a{
+  color: rgb(35, 36, 37);
+}
+.module table tr th a:hover{
+  font-size: 18px;
+  color: rgb(44, 178, 255);
+   
+ }
+
+.module table td a{
+  font-size: 16px;
+  border-radius:red 12px solid;
+  margin-right: 2%;
+
+   
+ }
+
+.id_name{
+  font-size: 12px;
+}
+.aligned label{
+  font-size: 16px;
+
+}
+
+ .button, input[type=submit], input[type=button], .submit-row input, a.button {
+  background-color: #aa4fff;
+  color: #fff;
+  border-radius: 14px;
+  font-size: 14px;
+}
+.button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=button]:hover, .submit-row input:hover, a.button:hover{
+  background: #14d5f7;
+  color: #333;
+}
+.button.default, input[type=submit].default, .submit-row input.default{
+  background: #30caa0;
+  color: #333;
+}
+.button.default:hover, input[type=submit].default:hover, .submit-row input.default:hover{
+  background: #10287e;
+  color: #fff;
+}
+
+
+.module h2{
+  background-color: #aa4fff;
+}

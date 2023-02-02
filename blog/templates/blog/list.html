@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--Header-->
+
+<!--Header-->
+
+
+
+<!--List of Post-->
+<div class="container">
+{% if post_list %}
+    <div class="card-group d-flex container flex-wrap-reverse justify-content-around">
+        {% for post_list in post_list  %}
+        <a href="{{post_list.get_absolute_url}}"><div class="card  ms-1 gap-2 m-1 border border-0 bg-light shadow-normal" >
+          <a style="text-decoration:auto;color:inherit;"  href="{{ post.get_absolute_url }}">
+          <div class="card-body p-2 ">
+          
+            {% comment %} <h5 class="card-title">{{post_list.title}}</h5> {% endcomment %}
+            <div class="card-text">{{post_list.body|safe|truncatewords:25|linebreaks}}</div>
+       <!--p class="card-text"><small class="text-light">Last updated 3 mins ago</small></p-->
+             <a class=" float-end btn btn-primary btn-sm border border-0 " style="background-color:orange" href="{{ post_list.get_absolute_url }}" role="button">Read more.</a>
+          </div>
+        </a>
+        </div></a>
+        {% endfor %}
+      </div>
+{% else %}
+    <h2 class="text-dark ">There is no Post</h2>
+{% endif %}
+        
+</div>
+<!--End List-->
+
+{% endblock %}
