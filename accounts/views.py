@@ -25,7 +25,7 @@ def register_signup(request):
             new_user.save()
      
             Profile.objects.create(user=new_user)
-            send_mass_mail(subject='Signup Updates',
+            send_mail(subject='Signup Updates',
                      message=f"Recently Someone has Signup at System Please Check is his details that he filled out \
                         \nEmail:{new_user.email} \n Name:{new_user.full_name} \n Contact No. :{new_user.country_code}-{new_user.contact_no}\n \
                         Thank You Please Report at Admin",

@@ -245,12 +245,12 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com' 
 EMAIL_PORT = 587
 
-EMAIL_HOST_USER = 'email@gmail.com'  
-EMAIL_HOST_PASSWORD = 'App Pawssord Code @ step Verification One'
+EMAIL_HOST_USER = 'badareseller@gmail.com'  
+EMAIL_HOST_PASSWORD = 'kdztbgljyvgjxyzg'
 
 DEFAULT_FROM_EMAIL = '<noreply@badaresellar.com>'
 
-RECIPIENT_ADDRESS = 'email@gmail.com'
+RECIPIENT_ADDRESS = 'hiwhystudio.dev@gmail.com'
 
 
 

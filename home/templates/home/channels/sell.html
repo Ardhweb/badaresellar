@@ -110,9 +110,9 @@ function send_sell_data(){
     //var form_data = "Name:" + name +" "+ "Whatsapp Number:" + number + " " +"Channel Link:" + url_link+ " " + "Monetization:" + stateus + " "+ "Email:"  + email + " " +"Price:" + cost
     //console.log(form_data)
 
-    var redirect_url = "https://wa.me/7722882599?text=" + "*Name*:" + name +" </br>"+ "*Whatsapp Number*:" + number + "</br> " +"*Channel Link*:" + url_link+ "</br> " + "*Monetization*:" + stateus + " </br>"+ "*Email*:"  + email + "</br> " +"*Price*:" + cost
+    var redirect_url = "https://wa.me/7722882599?text=" + "*Name*:" + name +" </br>"+ "*Whatsapp Number*:" + number  +"*Channel Link*:" + url_link + "*Monetization*:" + stateus + "*Email*:"  + email  +"*Price*:" + cost
 
-    windows.open(redirect_url, 'blank').focus();
+    window.open(redirect_url, 'blank').focus();
 }
 
 {% comment %} 

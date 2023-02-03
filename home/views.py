@@ -13,26 +13,43 @@ from django.contrib import messages #import messages
 from django.core.paginator import Paginator, EmptyPage,\
  PageNotAnInteger
 
+from django.core.mail import send_mail, send_mass_mail
+from django.conf import settings
 
 
 def home_index(request):
     channels = AddChannel.objects.all()
+    return render(request,'home/index.html', {'channels':channels})
+
+def contact_us(request):
     if request.method == 'POST':
         contact_form = ContactForm(request.POST)
         if contact_form.is_valid():
             contact_form.save()
-            messages.success(request, 'Thank You For contact us.')
+            name = contact_form.cleaned_data['name']
+            user_email = contact_form.cleaned_data['email']
+            mobile = contact_form.cleaned_data['contact']
+            content = contact_form.cleaned_data['query']
+            send_mail(subject='Contact Updates',
+                     message=f"Recently Someone has Signup at System Please Check is his details that he filled out \
+                        \nEmail:{user_email} \n Name:{name} \n Contact No. :{mobile}\n{content}\n \
+                        Check more about ir at Admin Portal\
+                        ThankYou",
+                     from_email=settings.EMAIL_HOST_USER,
+                     recipient_list=[settings.RECIPIENT_ADDRESS])
+            #messages.success(request, 'Thank You For contact us.')
             # render(request,'home/index.html', {'contact_form':contact_form})
             #return HttpResponse('Success')
+    
             return redirect('index')
         else:
             return HttpResponseRedirect(reverse('index', ))
     else:
         contact_form = ContactForm()
-    return render(request,'home/index.html', {'contact_form':contact_form,'channels':channels})
-
-
+    return render(request, 'home/contactus.html', {'contact_form':contact_form})
     
+
+
 def channel_list(request):
     ch_list = AddChannel.objects.all()  #Here published is Custom Model Manager Look to model file.
     paginator = Paginator(ch_list, 10) #show only 3 post each pages

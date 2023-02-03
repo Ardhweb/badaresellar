@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<div class=" container-fluid p-3 mb-2 mt-2 bg-warning" style="background-color:rgb(84 104 255);">
+    <div class="text-center mt-2 mb-2 fw-bold" style="font-size:36px;">Contact us</div>
+  
+      <div class="row justify-content-center p-4 ">
+
+        <div class="col-md-6 shadow-sm  p-3 m-1 mb-5 bg-body-tertiary ">
+          <form method="post">
+            {% csrf_token %}
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            {{contact_form.name}}
+        
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            {{contact_form.email}}
+        
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Phone</label>
+            {{contact_form.contact}}
+        
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Your Query</label>
+            {{contact_form.query}}
+        
+          </div>
+        
+          <button class="btn btn-lg btn-primary">Submit</button>
+      
+        </form>
+          
+        </div>
+
+
+      </div>
+
+    
+</div>
+  
+
+
+
+{% endblock content %}

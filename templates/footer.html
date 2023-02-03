@@ -15,22 +15,22 @@
                     <div class="lh-lg">Office 192.RG Road Yug Nagar, Jk 78293</div>
                  </div>
 
+                 <p class="fs-6">Contact us:</br>
+                    <span style="font-size:16px;">91-23423232</span>
+                </p>
                 <p class="fs-6">Feedback at: </br>
                     <span style="font-size:16px;">badareseller@gmail.com</span>
                 </p>
-                <p class="fs-6">Contact us</br>
-                    <span style="font-size:16px;">91-23423232</span>
-                </p>
-                
             </div>
             
             <div class="col-sm-4 mb-3">
                 <h5 class="text-left">Quick Links</h5>
                 <nav class="nav flex-column ">
-                    <a class=" navlink_footer  " aria-current="page" href="#">Home</a>
+                    <a class=" navlink_footer  " aria-current="page" href="{% url 'index' %}">Home</a>
                     <a class="navlink_footer ft-lc" href="{% url 'about_us' %}">About us</a>
-                    <a class="navlink_footer ft-lc" href="">Buy Channel</a>
+                    <a class="navlink_footer ft-lc" href="{% url 'channel-list' %}">Buy Channel</a>
                     <a class="navlink_footer ft-lc" href="#">Services</a>
+                    <a class="navlink_footer ft-lc" href="{% url 'contact' %}">Contact</a>
                 </nav>
             </div>
             

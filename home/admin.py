@@ -6,15 +6,20 @@ from sorl.thumbnail.admin import AdminImageMixin
 
 
 
-class ImageListInline(admin.TabularInline):
+class ImageListInline(AdminImageMixin,admin.TabularInline):
     model = ImageList
-    raw_id__fields = ['channel']
+    raw_id__fields = ['channel',]
+    
+    
+    
 
 @admin.register(AddChannel)
 class AddChannelAdmin(admin.ModelAdmin):
     list_display = ['channel_name',]
     inlines = [ImageListInline]
     search_fields = ("channel_name__startswith","id__startswith" )
+
+    
 
 
 

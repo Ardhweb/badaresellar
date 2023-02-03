@@ -4,7 +4,11 @@
 <!--Header-->
 
 <!--Header-->
-
+<style>
+p img {
+	max-width: 100%; 
+}
+</style>
 
 
 <!--List of Post-->
@@ -17,7 +21,7 @@
           <div class="card-body p-2 ">
           
             {% comment %} <h5 class="card-title">{{post_list.title}}</h5> {% endcomment %}
-            <div class="card-text">{{post_list.body|safe|truncatewords:25|linebreaks}}</div>
+            <div id="#box" class="card-text justify-content-center">{{post_list.body|safe|truncatewords:25|linebreaks}}</div>
        <!--p class="card-text"><small class="text-light">Last updated 3 mins ago</small></p-->
              <a class=" float-end btn btn-primary btn-sm border border-0 " style="background-color:orange" href="{{ post_list.get_absolute_url }}" role="button">Read more.</a>
           </div>
